@@ -10,18 +10,6 @@ public class Bullet : MonoBehaviour
 
     private Enemy _targetEnemy;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // FixedUpdate adalah update yang lebih konsisten jeda pemanggilannya
     // cocok digunakan jika karakter memiliki Physic (Rigidbody, dll)
     private void FixedUpdate ()

@@ -25,18 +25,6 @@ public class Tower : MonoBehaviour
     // Digunakan untuk menyimpan posisi yang akan ditempati selama tower di drag
     public Vector2? PlacePosition { get; private set; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // Fungsi yang digunakan untuk mengambil sprite pada Tower Head
     public Sprite GetTowerHeadIcon ()
     {

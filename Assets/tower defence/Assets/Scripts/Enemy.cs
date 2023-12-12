@@ -14,18 +14,6 @@ public class Enemy : MonoBehaviour
     public Vector3 TargetPosition { get; private set; }
     public int CurrentPathIndex { get; private set; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // Fungsi ini terpanggil sekali setiap kali menghidupkan game object yang memiliki script ini
     private void OnEnable ()
     {

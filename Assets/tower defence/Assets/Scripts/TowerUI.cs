@@ -11,18 +11,6 @@ public class TowerUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     private Tower _towerPrefab;
     private Tower _currentSpawnedTower;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetTowerPrefab (Tower tower)
     {
         _towerPrefab = tower;
