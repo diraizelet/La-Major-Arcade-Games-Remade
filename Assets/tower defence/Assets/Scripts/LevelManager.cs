@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    // Fungsi Singleton
     private static LevelManager _instance = null;
 
     public static LevelManager Instance
@@ -71,9 +70,7 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
-        // Counter untuk spawn enemy dalam jeda waktu yang ditentukan
-        // Time.unscaledDeltaTime adalah deltaTime yang independent, tidak terpengaruh oleh apapun kecuali game object itu sendiri,
-        // jadi bisa digunakan sebagai penghitung waktu
+        
         _runningSpawnDelay -= Time.unscaledDeltaTime;
         if (_runningSpawnDelay <= 0f)
         {
@@ -95,8 +92,7 @@ public class LevelManager : MonoBehaviour
                 continue;
             }
 
-            // Kenapa nilainya 0.1? Karena untuk lebih mentoleransi perbedaan posisi,
-            // akan terlalu sulit jika perbedaan posisinya harus 0 atau sama persis
+         
             if (Vector2.Distance (enemy.transform.position, enemy.TargetPosition) < 0.1f)
             {
                 enemy.SetCurrentPathIndex (enemy.CurrentPathIndex + 1);
@@ -118,7 +114,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    // Menampilkan seluruh Tower yang tersedia pada UI Tower Selection
     private void InstantiateAllTowerUI ()
     {
         foreach (Tower tower in _towerPrefabs)
@@ -130,7 +125,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    // Mendaftarkan Tower yang di-spawn agar bisa dikontrol oleh LevelManager
     public void RegisterSpawnedTower (Tower tower)
     {
         _spawnedTowers.Add (tower);
@@ -169,8 +163,7 @@ public class LevelManager : MonoBehaviour
         newEnemy.gameObject.SetActive (true);
     }
 
-    // Untuk menampilkan garis penghubung dalam window Scene
-    // tanpa harus di-Play terlebih dahulu
+   
     private void OnDrawGizmos ()
     {
         for (int i = 0; i < _enemyPaths.Length - 1; i++)
@@ -221,9 +214,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void SetCurrentLives (int currentLives)
-    {
-        // Mathf.Max fungsi nya adalah mengambil angka terbesar
-        // sehingga _currentLives di sini tidak akan lebih kecil dari 0
+    
         _currentLives = Mathf.Max (currentLives, 0);
         _livesInfo.text = $"Lives: {_currentLives}";
     }

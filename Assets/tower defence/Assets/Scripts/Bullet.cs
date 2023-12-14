@@ -45,13 +45,10 @@ public class Bullet : MonoBehaviour
         {
             gameObject.SetActive (false);
 
-            // Bullet yang memiliki efek splash area
             if (_bulletSplashRadius > 0f)
             {
                 LevelManager.Instance.ExplodeAt (transform.position, _bulletSplashRadius, _bulletPower);
             }
-
-            // Bullet yang hanya single-target
             else
             {
                 _targetEnemy.ReduceEnemyHealth (_bulletPower);

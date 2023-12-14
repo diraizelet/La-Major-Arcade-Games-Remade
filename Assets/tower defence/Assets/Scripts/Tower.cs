@@ -22,10 +22,8 @@ public class Tower : MonoBehaviour
     private Enemy _targetEnemy;
     private Quaternion _targetRotation;
 
-    // Digunakan untuk menyimpan posisi yang akan ditempati selama tower di drag
     public Vector2? PlacePosition { get; private set; }
 
-    // Fungsi yang digunakan untuk mengambil sprite pada Tower Head
     public Sprite GetTowerHeadIcon ()
     {
         return _towerHead.sprite;
@@ -41,7 +39,6 @@ public class Tower : MonoBehaviour
         transform.position = (Vector2) PlacePosition;
     }
 
-    // Mengubah order in layer pada tower yang sedang di drag
     public void ToggleOrderInLayer (bool toFront)
     {
         int orderInLayer = toFront ? 2 : 0;
@@ -49,7 +46,6 @@ public class Tower : MonoBehaviour
         _towerHead.sortingOrder = orderInLayer;
     }
 
-    // Mengecek musuh terdekat
     public void CheckNearestEnemy (List<Enemy> enemies)
     {
         if (_targetEnemy != null)
@@ -83,7 +79,6 @@ public class Tower : MonoBehaviour
         _targetEnemy = nearestEnemy;
     }
 
-    // Menembak musuh yang telah disimpan sebagai target
     public void ShootTarget ()
     {
         if (_targetEnemy == null)
@@ -108,7 +103,6 @@ public class Tower : MonoBehaviour
         }
     }
 
-    // Membuat tower selalu melihat ke arah musuh
     public void SeekTarget ()
     {
         if (_targetEnemy == null)
